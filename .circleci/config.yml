@@ -6,19 +6,14 @@ orbs:
 
 jobs:
   install:
-    parameters:
-      chrome-version:
-        type: string
     docker:
       - image: cimg/ruby:2.7.5-browsers
+    resource_class: small
+    parallelism: 50
     steps:
       - browser-tools/install-chrome
 
 workflows:
   ilovebrowsing:
     jobs:
-      - install:
-          matrix:
-            parameters:
-              chrome-version:
-                - ''
+      - install
