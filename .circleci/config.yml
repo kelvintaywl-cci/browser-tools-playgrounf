@@ -9,7 +9,7 @@ jobs:
     docker:
       - image: cimg/ruby:2.7.5-browsers
     resource_class: small
-    parallelism: 50
+    parallelism: 23
     steps:
       - browser-tools/install-chrome
 
